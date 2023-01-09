@@ -1,13 +1,11 @@
 package palindrome_number
 
 import (
-	"fmt"
 	"strconv"
-	"syscall"
 )
 
 // https://leetcode.cn/problems/palindrome-number
-func PalindromeNumber1(x int) bool {
+func isPalindrome(x int) bool {
 	// -231 <= x <= 231 - 1
 	if x < 0 {
 		return false
@@ -16,26 +14,46 @@ func PalindromeNumber1(x int) bool {
 	}
 	// 正整数 转为 字符串
 	xStr := strconv.Itoa(x)
-	// 字符串 转为 字节数组
-	for i, b := range xStr {
-		fmt.Println(i, b)
-	}
-	bytes, _ := syscall.ByteSliceFromString(xStr)
+	// 字符串 转为 字符数组
+	bytes := []byte(xStr)
 	t := len(bytes)
-	for i := 0; i < t; i++ {
-
+	for i := 0; i <= t/2; i++ {
+		head := bytes[i]
+		tail := bytes[t-i-1]
+		if head != tail {
+			return false
+		}
 	}
-	return false
+	return true
 }
 
-func PalindromeNumber2(x int) bool {
+func isPalindrome1(x int) bool {
 	// -231 <= x <= 231 - 1
 	if x < 0 {
 		return false
-	} else if x == 0 {
+	} else if x <= 9 {
 		return true
-	} else {
-		// 正整数
+	} else if x%10 == 0 {
+		return false
 	}
-	return false
+	// 翻转一半的数字
+	var half int
+	for {
+		if x < 10 {
+			break
+		}
+		half = half*10 + x%10
+		if x < half {
+			break
+		} else if x == half {
+			return true
+		}
+		x = x / 10
+		if x < half {
+			break
+		} else if x == half {
+			return true
+		}
+	}
+	return half == x
 }
