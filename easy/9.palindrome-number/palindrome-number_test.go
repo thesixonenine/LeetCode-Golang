@@ -3,13 +3,13 @@ package palindrome_number
 import "testing"
 
 func TestPalindromeNumber(t *testing.T) {
-	intMap := map[int]bool{}
-	intMap[121] = true
-	intMap[-121] = false
-	intMap[10] = false
-	intMap[21120] = false
+	testMap := map[int]bool{}
+	testMap[121] = true
+	testMap[-121] = false
+	testMap[10] = false
+	testMap[21120] = false
 
-	for k, want := range intMap {
+	for k, want := range testMap {
 		palindrome(k, want, t)
 	}
 }
