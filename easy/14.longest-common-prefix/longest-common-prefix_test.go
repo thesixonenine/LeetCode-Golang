@@ -18,4 +18,28 @@ func TestLongestCommonPrefix(t *testing.T) {
 	if got != want {
 		t.Errorf("got '%v' want '%v'", got, want)
 	}
+
+	str = []string{"ab", "a"}
+	want = "a"
+
+	got = longestCommonPrefix(str)
+	if got != want {
+		t.Errorf("got '%v' want '%v'", got, want)
+	}
+
+	str = []string{"dog", "dog", "dog"}
+	want = "dog"
+
+	got = longestCommonPrefix(str)
+	if got != want {
+		t.Errorf("got '%v' want '%v'", got, want)
+	}
+
+	str = []string{"aaa", "aa"}
+	want = "aa"
+
+	got = longestCommonPrefix(str)
+	if got != want {
+		t.Errorf("got '%v' want '%v'", got, want)
+	}
 }
