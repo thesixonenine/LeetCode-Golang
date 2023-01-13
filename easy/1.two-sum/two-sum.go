@@ -1,6 +1,6 @@
 package two_sum
 
-// https://leetcode.cn/problems/two-sumcd
+// https://leetcode.com/problems/two-sumcd
 func twoSum(numbs []int, target int) []int {
 	// 使用map
 	intMap := map[int]int{}

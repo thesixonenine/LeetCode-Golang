@@ -4,7 +4,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode.cn/problems/palindrome-number
+// https://leetcode.com/problems/palindrome-number
 func isPalindrome(x int) bool {
 	// -231 <= x <= 231 - 1
 	if x < 0 {
