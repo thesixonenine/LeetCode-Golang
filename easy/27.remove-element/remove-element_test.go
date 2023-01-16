@@ -16,4 +16,18 @@ func TestRemoveElement(t *testing.T) {
 			t.Errorf("got '%v' want '%v'", nums[i], item)
 		}
 	}
+
+	nums = []int{1}
+	val = 1
+	want = 0
+	wantArr = []int{}
+	got = removeElement(nums, val)
+	if got != want {
+		t.Errorf("got '%v' want '%v'", got, want)
+	}
+	for i, item := range wantArr {
+		if nums[i] != item {
+			t.Errorf("got '%v' want '%v'", nums[i], item)
+		}
+	}
 }

@@ -2,7 +2,12 @@ package remove_element
 
 // https://leetcode.com/problems/remove-element/
 func removeElement(nums []int, val int) int {
-	nums[0] = 2
-	nums[1] = 2
-	return 2
+	left := 0
+	for _, v := range nums { // v 即 nums[right]
+		if v != val {
+			nums[left] = v
+			left++
+		}
+	}
+	return left
 }
