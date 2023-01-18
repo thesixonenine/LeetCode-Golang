@@ -8,7 +8,7 @@ function read_dir(){
             read_dir $1"/"$file
         else
             if [[ $file =~ .*_test.go$ ]]; then
-                echo $1"/"$file
+                # echo $1"/"$file
                 cd $1"/" || exit
                 go test
                 cd - || exit
