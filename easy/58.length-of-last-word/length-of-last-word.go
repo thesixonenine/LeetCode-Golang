@@ -4,8 +4,14 @@ package length_of_last_word
 func lengthOfLastWord(s string) int {
 	bytes := []byte(s)
 	l := len(bytes)
-	for i := l - 1; i >= 0; i-- {
-
+	r := l - 1
+	for bytes[r] == 32 {
+		r--
 	}
-	return 0
+	for i := r; i >= 0; i-- {
+		if bytes[i] == 32 {
+			return r - i
+		}
+	}
+	return r + 1
 }
