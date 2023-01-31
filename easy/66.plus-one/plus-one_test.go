@@ -8,6 +8,11 @@ func TestPlusOne(t *testing.T) {
 	got := plusOne(testArr)
 	check(t, wantArr, got)
 
+	testArr = []int{9, 8, 9}
+	wantArr = []int{9, 9, 0}
+	got = plusOne(testArr)
+	check(t, wantArr, got)
+
 	testArr = []int{4, 3, 2, 1}
 	wantArr = []int{4, 3, 2, 2}
 	got = plusOne(testArr)
