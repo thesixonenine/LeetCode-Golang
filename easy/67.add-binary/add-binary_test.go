@@ -20,4 +20,12 @@ func TestAddBinary(t *testing.T) {
 	if got != want {
 		t.Errorf("got '%v' want '%v'", got, want)
 	}
+
+	a = "0"
+	b = "0"
+	want = "0"
+	got = addBinary(a, b)
+	if got != want {
+		t.Errorf("got '%v' want '%v'", got, want)
+	}
 }
