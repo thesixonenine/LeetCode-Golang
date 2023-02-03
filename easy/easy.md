@@ -1,1 +1,1 @@
-[LeetCode简单难度](https://leetcode.cn/problemset/all/?difficulty=EASY)
+[LeetCode简单难度](https://leetcode.com/problemset/all/?difficulty=EASY)
