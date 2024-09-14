@@ -16,4 +16,4 @@ jobs:
         with:
           go-version: "stable"
       - name: Test
-        run: go test ./..
+        run: go test ./...
