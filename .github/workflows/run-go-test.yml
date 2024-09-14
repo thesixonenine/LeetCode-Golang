@@ -1,25 +1,19 @@
 name: run-go-test
 
 on:
-#   push:
-#     branches:
-#       - master
   workflow_dispatch:
+  push:
+    branches: [ "master" ]
 
 jobs:
-  # This workflow contains a single job called "build"
   run-go-test:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Shanghai
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3.3.0
-      - name: Setup Go environment
-        uses: actions/setup-go@v3.5.0
-      - name: Run Go Test
-        run: |
-          chmod u+x run-go-test.sh
-          ./run-go-test.sh ./easy
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+      - name: Test
+        run: go test ./..
