@@ -17,7 +17,7 @@ func Test_minDepth(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := minDepth(tt.args); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("isBalanced() = %v, want %v", got, tt.want)
+				t.Errorf("minDepth() = %v, want %v", got, tt.want)
 			}
 		})
 	}
