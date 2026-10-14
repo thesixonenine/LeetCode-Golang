@@ -1,6 +1,7 @@
 package group_anagrams
 
 import (
+	"maps"
 	"slices"
 )
 
@@ -12,12 +13,5 @@ func groupAnagrams(strs []string) [][]string {
 		b := string(bs)
 		m[b] = append(m[b], w)
 	}
-	ans := make([][]string, 0)
-	for _, v := range m {
-		if len(v) == 0 {
-			continue
-		}
-		ans = append(ans, v)
-	}
-	return ans
+	return slices.Collect(maps.Values(m))
 }
