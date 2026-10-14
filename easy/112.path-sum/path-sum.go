@@ -10,7 +10,7 @@ func hasPathSum(root *TreeNode, targetSum int) bool {
 	if root == nil {
 		return false
 	}
-	if root.Val == targetSum {
+	if root.Val == targetSum && root.Left == nil && root.Right == nil {
 		return true
 	}
 	nt := targetSum - root.Val
